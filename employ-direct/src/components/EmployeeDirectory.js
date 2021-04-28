@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import EmployeeTabke from "./EmployeeTable";
+import EmployeeTabke from "./EmployeeRow";
 import Header from "./Header";
 import getUserData from "../utils/API";
 

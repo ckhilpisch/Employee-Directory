@@ -1,8 +1,15 @@
 import React from "react";
-import EmployeeDirectoryContainer from "./components/EmployeeDirectoryContainer.js";
+import EmployeeDirectory from "./components/Employee.js";
+import Header from "./components/Header"
 
 function App() {
-  return <EmployeeDirectoryContainer />;
+  return (
+  <div>
+  <Header />
+  <EmployeeDirectory />
+  </div>
+  
+  );
 }
 
 export default App;
