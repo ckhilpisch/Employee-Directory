@@ -1,6 +1,7 @@
 import React from "react";
-import EmployeeDirectory from "./components/Employee.js";
-import Header from "./components/Header"
+import EmployeeDirectory from "./components/EmployeeDirectory/index";
+import Header from "./components/Header";
+
 
 function App() {
   return (
