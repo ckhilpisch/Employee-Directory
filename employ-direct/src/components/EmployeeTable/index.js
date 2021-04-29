@@ -1,5 +1,6 @@
 import React from "react";
 import MaterialTable from "material-table";
+import "../EmployeeTable/style.css"
 
 function EmployeeTable({ users }) {
   console.log(users);
@@ -7,9 +8,8 @@ function EmployeeTable({ users }) {
       <MaterialTable
       title=""
       columns={[
-        { title: "", field: "pic", render: rowData => <img src={rowData.pic}/> },
-        { title: 'First', field: 'name' },
-        { title: 'Last', field: 'surname' },
+        { title: "Image", field: "pic", render: rowData => <img src={rowData.pic}/> },
+        { title: 'Name', field: 'name' },
         { title: "Email", field: "email" },
         { title: "Phone", field: "phone"},
       ]}
@@ -20,5 +20,6 @@ function EmployeeTable({ users }) {
       }}
        
 />)}
+
 
 export default EmployeeTable;
