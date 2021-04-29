@@ -1,57 +1,53 @@
 import React, { Component } from "react";
-import EmployeeRow from "../EmployeeTable";
-import Header from "../Header";
-import API from "../../utils/API";
-import getUserData from "../../utils/API";
-
-
-
+import EmployeeTable from "../EmployeeTable/index";
+import { getUserData } from "../../utils/API";
+import Navbar from "../Navbar/index";
+import Search from "../Search/index"
 
 
 export default class EmployeeDirectory extends Component {
     state = {
-      users: [{}],
+      users: [],
       order: "descend",
-      filteredUsers: [{}]
+      filteredUsers: []
     }
 
     componentDidMount() {
-      API.getUserData().then(results => {
+      getUserData().then(results => {
+        const cleanUsers = 
+        results.data.results.map(user => {
+          return {
+            pic: user.picture.thumbnail, 
+            name: user.name.first, 
+            surname: user.name.last, 
+            email: user.email, phone: user.phone
+          }
+        })
         this.setState({
-          users: results.data.results,
-          filteredUsers: results.data.results
+          users: cleanUsers,
+          filteredUsers: cleanUsers
         });
       });
     }
     
     handleSearch = event => {
-      console.log(event.target.value);
       const filter = event.target.value;
       const filteredList = this.state.users.filter(item => {
-
-        let values = Object.values(item)
-          .join("")
-          .toLowerCase();
-        return values.indexOf(filter.toLowerCase()) !== -1;
-      });
+        return item.name.toLowerCase().includes(filter.toLowerCase()) 
+      })
       this.setState({ filteredUsers: filteredList });
     }
-  
-    
-
       render() {
       return (
         <>
-          <Nav handleSearch={this.handleSearch} />
+          <Navbar>
+          <Search handleSearch={this.handleSearch} />
+          </Navbar>
           <div className="employeeTable">
-            <EmployeeTable
-              headings={this.headings}
-              users={this.state.filteredUsers}
-              handleSort={this.handleSort}
+            <EmployeeTable users={this.state.filteredUsers}
             />
           </div>
         </>
       );
     }
   }
-  
