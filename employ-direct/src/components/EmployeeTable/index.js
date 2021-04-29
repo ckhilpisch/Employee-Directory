@@ -1,38 +1,24 @@
 import React from "react";
+import MaterialTable from "material-table";
 
-function TableBody({ users }) {
-  return (
-    <tbody>
-      {users[0] !== undefined && users[0].name !== undefined ? (
-        users.map(({ name, picture, phone, email, dob }) => {
-          return (
-            <tr>
-              <td data-th="Image" className="align-middle">
-                <img
-                  src={picture.medium}
-                  alt={"profile image for " + name.first + " " + name.last}
-                  className="img-responsive"
-                />
-              </td>
-              <td data-th="Name" className="name-cell align-middle">
-                {name.first} {name.last}
-              </td>
-              <td data-th="Phone" className="align-middle">
-                {phone}
-              </td>
-              <td data-th="Email" className="align-middle">
-                <a href={"mailto:" + email} target="__blank">
-                  {email}
-                </a>
-              </td>
-            </tr>
-          );
-        })
-      ) : (
-        <></>
-      )}
-    </tbody>
-  );
-}
+function EmployeeTable({ users }) {
+  console.log(users);
+    return (
+      <MaterialTable
+      title=""
+      columns={[
+        { title: "", field: "pic", render: rowData => <img src={rowData.pic}/> },
+        { title: 'First', field: 'name' },
+        { title: 'Last', field: 'surname' },
+        { title: "Email", field: "email" },
+        { title: "Phone", field: "phone"},
+      ]}
+      data={ users }
+      options={{
+        sorting: true,
+        search: false
+      }}
+       
+/>)}
 
-export default TableBody;
+export default EmployeeTable;
