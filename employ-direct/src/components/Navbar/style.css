@@ -1,0 +1,13 @@
+.navbar {
+    padding: .5rem 1rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color:  rgb(233, 245, 233) !important;
+
+}
+.navbar-expand {
+    flex-flow: row nowrap;
+    
+}
+

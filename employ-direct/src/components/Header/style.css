@@ -1,5 +1,10 @@
 .header {
-    display: block;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 30px 0;
+    color: #fff;
+    background-color: #103496;
+    width: 100%;
+    text-align: center;
+    border-bottom: 5px solid  Lightgreen;
+    margin-bottom: 10px;
+    font-family: Reem Kufi,sans-serif;
 }

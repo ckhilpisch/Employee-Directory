@@ -1,0 +1,23 @@
+body {
+    font-family: 'Nanum Gothic', sans-serif !important;
+    text-align: center;
+}
+
+
+.MuiTableCell-head {
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: 700 !important;
+    font-size: larger !important;
+    line-height: 1.5rem;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(233, 245, 233);
+}
+
+.img:hover span { /*CSS for enlarged image on hover*/
+	visibility: visible; 
+	width: 200px;
+	top: 5px; /* use IF IE6 style to correct IE6 positions of larger image relative to thumb */
+	left: 300px;/*position where enlarged image should offset horizontally */
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import Search from "../Search";
+import "../Navbar/style.css"
 
 function Navbar({children}) {
   return (
