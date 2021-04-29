@@ -1,10 +1,10 @@
 import React from "react";
 import Search from "../Search";
 
-function Navbar() {
+function Navbar({children}) {
   return (
-    <nav className="navbar navbar-dark bg-dark">
-        <Search />
+    <nav className="navbar navbar-light bg-light">
+        {children}
       </nav>
   );
 }
