@@ -1,7 +1,8 @@
 import React from "react";
 
 
-function Search () {
+
+function Search (props) {
     return (
         <div className="search">
         <form className="form-inline">
@@ -10,7 +11,7 @@ function Search () {
             type="search"
             placeholder="Search"
             aria-label="Search"
-            onChange={e => handleSearch(e)}
+            onChange={e => props.handleSearch(e)}
           />
         </form>
       </div>
