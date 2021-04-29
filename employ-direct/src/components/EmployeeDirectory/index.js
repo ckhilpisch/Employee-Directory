@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import EmployeeTable from "../EmployeeTable/index";
 import { getUserData } from "../../utils/API";
 import Navbar from "../Navbar/index";
-import Search from "../Search/index"
+import Search from "../Search/index";
+import "../EmployeeDirectory/style.css";
 
 
 export default class EmployeeDirectory extends Component {
@@ -18,9 +19,9 @@ export default class EmployeeDirectory extends Component {
         results.data.results.map(user => {
           return {
             pic: user.picture.thumbnail, 
-            name: user.name.first, 
-            surname: user.name.last, 
-            email: user.email, phone: user.phone
+            name: user.name.first + " " + user.name.last, 
+            email: user.email, 
+            phone: user.phone
           }
         })
         this.setState({
